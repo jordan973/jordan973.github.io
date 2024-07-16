@@ -27,7 +27,7 @@ body {
     font-family: 'InterDisplay', sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 0 7rem;
+    padding: 0 10%;
     color: white;
     background: linear-gradient(to bottom, #0F172A, #172441);
 }
@@ -64,10 +64,11 @@ b{
     width: 35%;
     height: 100%;
     padding: 4rem 5rem;
+    padding-bottom: 0;
 }
 
-.fixed-item nav{
-    margin-top: 4rem;
+.navbar{
+    margin-top: 10vh;
 }
 
 .fixed-item nav li{
@@ -76,7 +77,7 @@ b{
 }
 
 .fixed-item p{
-    margin-top: 6rem;
+    margin-top: 10vh;
     font-size: 0.85rem;
 }
 
@@ -224,4 +225,66 @@ span{
 .reverse {
     transform: rotate(0deg);
     transition: transform 0.3s;
+}
+
+@media (max-width: 1200px) {
+    body{
+        padding: 0 5rem;
+    }
+    
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .scrolled-item{
+        position: relative;
+        width: 100%;
+    }
+
+    .fixed-item {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    .fixed-item p{
+        margin-top: 5vh;
+    }
+
+    .navbar{
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    body{
+        padding: 0 3rem;
+    }
+
+    section{
+        padding: 0;
+    }
+
+    .skills-card{
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .experience-card{
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .project-card{
+        width: 100%;
+        max-width: 500px;
+    }
+
+}
+
+@media (max-width: 460px){
+    body{
+        padding: 0 1.5rem;
+    }
 }
