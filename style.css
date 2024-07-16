@@ -1,0 +1,227 @@
+@font-face {
+    font-family: 'InterDisplay';
+    src: url('/fonts/InterDisplay-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InterDisplay';
+    src: url('/fonts/InterDisplay-ExtraBold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hoves';
+    src: url('/fonts/Hoves.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'InterDisplay', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 7rem;
+    color: white;
+    background: linear-gradient(to bottom, #0F172A, #172441);
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h3, h4, h5{
+    margin: 0;
+}
+
+p, a, li{
+    color: #8D9CB2;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+b{
+    color: white;
+}
+
+.flex-container{
+    display: flex;
+}
+
+/* Left Side */
+.fixed-item{
+    position: sticky;
+    top: 0;
+    width: 35%;
+    height: 100%;
+    padding: 4rem 5rem;
+}
+
+.fixed-item nav{
+    margin-top: 4rem;
+}
+
+.fixed-item nav li{
+    margin-bottom: 1rem;
+    font-family: 'Hoves', sans-serif;
+}
+
+.fixed-item p{
+    margin-top: 6rem;
+    font-size: 0.85rem;
+}
+
+#typewriter{
+    margin: 0;
+}
+
+nav li a.active{
+    color: white;
+}
+
+a:hover{
+    color: white;
+    transition: 0.25s;
+}
+
+/* Right Side */
+.scrolled-item{
+    width: 65%;
+}
+
+section {
+    padding: 2rem;
+    text-align: center;
+    display: grid;
+}
+
+section p {
+    text-align: left;
+}
+
+.about p{
+    font-size: 1.2rem;
+}
+
+.projects-container, .skills-container, .experience-container, .education-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card, .skills-card, .experience-card, .education-card{
+    border-radius: 0.3rem;
+    background-color: rgba(23, 59, 113, 0.2);
+    box-sizing: border-box;
+}
+
+.project-card:hover, .skills-card:hover, .experience-card:hover, .education-card:hover{
+    background-color: rgba(23, 59, 113, 0.4);
+    transition: 0.5s;
+}
+
+.project-card{
+    height: auto;
+    width: 500px;
+    padding: 1rem;
+}
+
+.project-card img{
+    width: 100%;
+}
+
+.skills-card{
+    height: auto;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.skills-card h3{
+    margin: 10px;
+}
+
+.skill-content{
+    overflow: hidden;
+    height: 0;
+    transition: height 0.3s ease;
+    width: 100%;
+}
+
+.skill-content img{
+    height: 70px;
+    margin: 5px;
+}
+
+.experience-card {
+    height: 100px;
+    width: 500px;
+    padding: 1rem;
+    height: auto;
+}
+
+.experience-card ul{
+    text-align: left;
+}
+
+.experience-card ul li{
+    list-style: circle;
+}
+
+.education-card {
+    height: 450px;
+    width: 300px;
+    padding: 1.5rem;
+}
+
+span{
+    padding: 2px 10px;
+    border-radius: 1rem;
+    text-align: left;
+    margin: 5px 0;
+    display: inline-block;
+    color: white;
+}
+
+.label-html{
+    background-color: rgb(255, 166, 71);
+}
+
+.label-css{
+    background-color: rgb(87, 170, 252);
+}
+
+.label-js{
+    background-color: rgb(214, 211, 7);
+}
+
+.label-php{
+    background-color: rgb(191, 127, 237);
+}
+.label-builderall{
+    background-color: rgb(43, 130, 217);
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s;
+}
+
+.reverse {
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+}
