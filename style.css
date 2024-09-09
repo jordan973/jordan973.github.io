@@ -94,6 +94,11 @@ a:hover{
     transition: 0.25s;
 }
 
+.icon{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
 /* Right Side */
 .scrolled-item{
     width: 65%;
@@ -207,12 +212,17 @@ span{
 }
 
 .label-js{
-    background-color: rgb(214, 211, 7);
+    background-color: rgb(171, 169, 0);
 }
 
 .label-php{
     background-color: rgb(191, 127, 237);
 }
+
+.label-java{
+    background-color: rgb(231, 119, 0);
+}
+
 .label-builderall{
     background-color: rgb(43, 130, 217);
 }
