@@ -138,6 +138,9 @@ const projectDetails = {
 };
 
 // Handle project card clicks
+let savedScrollPosition = 0;
+const flexContainer = document.querySelector('.flex-container');
+
 document.querySelectorAll('.project-card.clickable').forEach(card => {
     card.addEventListener('click', () => {
         const projectId = card.getAttribute('data-project');
@@ -147,6 +150,9 @@ document.querySelectorAll('.project-card.clickable').forEach(card => {
             const detailPanel = document.querySelector('.project-detail-panel');
             document.getElementById('detail-title').textContent = project.title;
             document.getElementById('detail-body').innerHTML = project.content;
+
+            // Save scroll position before opening detail
+            savedScrollPosition = flexContainer.scrollTop;
 
             // Reset scroll position of the detail panel
             detailPanel.scrollTop = 0;
@@ -159,5 +165,10 @@ document.querySelectorAll('.project-card.clickable').forEach(card => {
 // Handle close button
 document.querySelector('.close-detail-btn').addEventListener('click', () => {
     document.querySelector('.main-wrapper').classList.remove('show-detail');
+
+    // Restore scroll position after transition
+    requestAnimationFrame(() => {
+        flexContainer.scrollTop = savedScrollPosition;
+    });
 });
 
