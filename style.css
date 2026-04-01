@@ -389,23 +389,6 @@ span {
     letter-spacing: 0.5px;
 }
 
-.text-mobile {
-    display: none;
-}
-
-.text-desktop,
-.text-mobile {
-    font: inherit;
-    color: inherit;
-    padding: 0;
-    margin: 0;
-    border: none;
-    background: none;
-    box-shadow: none;
-    letter-spacing: inherit;
-    text-transform: inherit;
-}
-
 .rotate {
     transform: rotate(180deg);
     transition: transform 0.3s;
@@ -476,39 +459,51 @@ span {
 
     html,
     body {
-        overflow-x: hidden;
-        overflow-y: hidden;
-        height: 100vh;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .main-wrapper {
-        width: 200%;
-        height: 100vh;
-        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-height: 100vh;
+        transform: none !important;
+        transition: none !important;
     }
 
     .main-wrapper.show-detail {
-        transform: translateX(-50%);
+        transform: none !important;
     }
 
     .flex-container {
-        width: 50%;
-        flex: 0 0 50%;
-        height: 100vh;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        height: auto !important;
+        min-height: 100vh;
         overflow-y: auto;
         overflow-x: hidden;
         background: linear-gradient(to bottom, #0F172A, #172441);
         background-attachment: local;
     }
 
+    .main-wrapper.show-detail .flex-container {
+        display: none;
+    }
+
     .project-detail-panel {
-        width: 50%;
-        flex: 0 0 50%;
-        height: 100vh;
+        display: none;
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        height: auto !important;
+        min-height: 100vh;
         padding: 3rem 1.5rem;
         position: relative;
         background: linear-gradient(to bottom, #0F172A, #172441);
@@ -516,41 +511,45 @@ span {
         box-sizing: border-box;
     }
 
-    .content-wrapper {
-        padding: 0;
-        width: 100%;
-        max-width: 100%;
+    .main-wrapper.show-detail .project-detail-panel {
+        display: block;
     }
 
+    .content-wrapper {
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Ajustement padding tablet */
     .fixed-item,
     .scrolled-item {
-        padding: 0 1.5rem;
+        padding: 0 1.5rem !important;
         background: transparent;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box;
-    }
-
-    .text-desktop {
-        display: none;
-    }
-
-    .text-mobile {
-        display: inline;
     }
 
     /* Adaptation de la flèche projet sur mobile */
     .project-card.clickable::after {
         right: 15px;
+        /* Rentre à l'intérieur */
         top: auto;
+        /* Annule le centrage vertical */
         bottom: 15px;
+        /* Se place en bas */
         transform: none;
+        /* Annule la transformation */
         opacity: 1;
+        /* Toujours visible sur mobile (pas de hover) */
         background: rgba(15, 23, 42, 0.8);
+        /* Fond sombre pour contraste sur l'image */
         border-color: #00ff41;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
+    /* Annulation de l'effet de slide au hover sur mobile */
     .project-card.clickable:hover::after {
         transform: scale(1.1);
     }
@@ -563,17 +562,6 @@ span {
     .project-card {
         width: 100%;
         max-width: 500px;
-    }
-
-    .skills-card {
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .education-card {
-        width: 100%;
-        max-width: 400px;
-        height: auto;
     }
 
     .close-detail-btn {
@@ -611,7 +599,8 @@ span {
 }
 
 .certification-card {
-    width: 500px;
+    flex: 1 1 300px;
+    max-width: 500px;
     padding: 2rem;
     text-align: center;
     display: flex;
@@ -786,6 +775,9 @@ a {
 }
 
 @media (max-width: 460px) {
+    body {
+        padding: 0 1.5rem;
+    }
 
     .cert-icon {
         width: 60px;
@@ -794,5 +786,27 @@ a {
 
     .cert-icon i {
         font-size: 1.5rem;
+    }
+}
+
+/* Responsive text toggle */
+.text-desktop,
+.text-mobile {
+    all: unset;
+    color: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+.text-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .text-desktop {
+        display: none;
+    }
+    .text-mobile {
+        display: inline;
     }
 }
